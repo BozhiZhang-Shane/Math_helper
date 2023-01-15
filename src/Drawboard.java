@@ -405,7 +405,7 @@ public class Drawboard {
     
     private void updateQuiz(ActionEvent e) {
     	quiz quiz = new quiz();
-    	ArrayList<questions> qList = quiz.generateQuiz(difficulty);
+    	ArrayList<questions> qList = quiz.generateQuiz(1);
     	 String answer;
          for (int i = 0;i < qList.size();i++){
              questions question = qList.get(i);
@@ -424,7 +424,7 @@ public class Drawboard {
                      null,
                      "0"
              );
-             if(answer!=question.getAnswer()) {
+             if(!answer.equals(question.getAnswer())) {
             	 JOptionPane.showInputDialog(
                      frame,
                      "Sorry, the correct answer is:" + question.getAnswer(),
